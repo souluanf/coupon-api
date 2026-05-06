@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:coupondb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL
+    username: sa
+    password: ""
+    hikari:
+      maximum-pool-size: 5
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+      settings:
+        web-allow-others: false
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  flyway:
+    enabled: true
+
+openapi-servers-urls: http://localhost:${server.port:8080}
