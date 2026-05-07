@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: test
+  jpa:
+    open-in-view: false
+
+logging:
+  level:
+    org.springdoc.core.events.SpringDocAppInitializer: ERROR
