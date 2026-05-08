@@ -3,6 +3,12 @@ name: CD
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - '**.md'
+      - '.gitignore'
+      - '.gitattributes'
+      - '.env.example'
+      - 'Makefile'
 
 jobs:
   build:
