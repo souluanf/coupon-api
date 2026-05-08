@@ -8,13 +8,14 @@ REST API para gerenciamento de cupons de desconto.
 [![Spring Boot](https://img.shields.io/badge/Spring_Boot-4.0.6-6DB33F?style=flat-square&logo=spring-boot&logoColor=white)](https://spring.io/projects/spring-boot)
 [![MapStruct](https://img.shields.io/badge/MapStruct-1.6.3-22509A?style=flat-square&logo=mapstruct&logoColor=white)](https://mapstruct.org/)
 [![Flyway](https://img.shields.io/badge/Flyway-11.11.2-22509A?style=flat-square&logo=flyway&logoColor=white)](https://flywaydb.org/)
-[![Swagger](https://img.shields.io/badge/Swagger-3.1.0-22509A?style=flat-square&logo=swagger&logoColor=white)](https://swagger.io/)
-[![Kubernetes](https://img.shields.io/badge/Kubernetes-1.26-22509A?style=flat-square&logo=kubernetes&logoColor=white)](https://kubernetes.io/)
+[![Swagger](https://img.shields.io/badge/Swagger-3.1.0-85EA2D?style=flat-square&logo=swagger&logoColor=black)](https://swagger.io/)
+[![Kubernetes](https://img.shields.io/badge/Kubernetes-1.26-326CE5?style=flat-square&logo=kubernetes&logoColor=white)](https://kubernetes.io/)
 [![H2](https://img.shields.io/badge/H2-2.2.224-22509A?style=flat-square&logo=h2&logoColor=white)](https://www.h2database.com/html/main.html)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-18-4479A1?style=flat-square&logo=postgresql&logoColor=white)](https://www.postgresql.org/docs/)
-[![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)](https://docs.docker.com)
+[![Docker](https://img.shields.io/badge/Docker-enabled-2496ED?style=flat-square&logo=docker&logoColor=white)](https://docs.docker.com)
 
 ---
+[![SonarQube Cloud](https://sonarcloud.io/images/project_badges/sonarcloud-dark.svg)](https://sonarcloud.io/summary/new_code?id=souluanf_coupon-api)
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=souluanf_coupon-api&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=souluanf_coupon-api)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=souluanf_coupon-api&metric=coverage)](https://sonarcloud.io/summary/new_code?id=souluanf_coupon-api)
