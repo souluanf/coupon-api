@@ -15,22 +15,19 @@ REST API para gerenciamento de cupons de desconto.
 [![Docker](https://img.shields.io/badge/Docker-enabled-2496ED?style=flat-square&logo=docker&logoColor=white)](https://docs.docker.com)
 
 ---
-[![SonarQube Cloud](https://sonarcloud.io/images/project_badges/sonarcloud-dark.svg)](https://sonarcloud.io/summary/new_code?id=souluanf_coupon-api)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=souluanf_coupon-api&metric=alert_status&token=0b8cc8af8f76bcde0ca74ea643be90b74ca6187a)](https://sonarcloud.io/summary/new_code?id=souluanf_coupon-api)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=souluanf_coupon-api&metric=coverage&token=0b8cc8af8f76bcde0ca74ea643be90b74ca6187a)](https://sonarcloud.io/summary/new_code?id=souluanf_coupon-api)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=souluanf_coupon-api&metric=code_smells&token=0b8cc8af8f76bcde0ca74ea643be90b74ca6187a)](https://sonarcloud.io/summary/new_code?id=souluanf_coupon-api)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=souluanf_coupon-api&metric=ncloc&token=0b8cc8af8f76bcde0ca74ea643be90b74ca6187a)](https://sonarcloud.io/summary/new_code?id=souluanf_coupon-api)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=souluanf_coupon-api&metric=sqale_index&token=0b8cc8af8f76bcde0ca74ea643be90b74ca6187a)](https://sonarcloud.io/summary/new_code?id=souluanf_coupon-api)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=souluanf_coupon-api&metric=reliability_rating&token=0b8cc8af8f76bcde0ca74ea643be90b74ca6187a)](https://sonarcloud.io/summary/new_code?id=souluanf_coupon-api)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=souluanf_coupon-api&metric=duplicated_lines_density&token=0b8cc8af8f76bcde0ca74ea643be90b74ca6187a)](https://sonarcloud.io/summary/new_code?id=souluanf_coupon-api)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=souluanf_coupon-api&metric=vulnerabilities&token=0b8cc8af8f76bcde0ca74ea643be90b74ca6187a)](https://sonarcloud.io/summary/new_code?id=souluanf_coupon-api)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=souluanf_coupon-api&metric=bugs&token=0b8cc8af8f76bcde0ca74ea643be90b74ca6187a)](https://sonarcloud.io/summary/new_code?id=souluanf_coupon-api)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=souluanf_coupon-api&metric=security_rating&token=0b8cc8af8f76bcde0ca74ea643be90b74ca6187a)](https://sonarcloud.io/summary/new_code?id=souluanf_coupon-api)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=souluanf_coupon-api&metric=sqale_rating&token=0b8cc8af8f76bcde0ca74ea643be90b74ca6187a)](https://sonarcloud.io/summary/new_code?id=souluanf_coupon-api)
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=souluanf_coupon-api&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=souluanf_coupon-api)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=souluanf_coupon-api&metric=coverage)](https://sonarcloud.io/summary/new_code?id=souluanf_coupon-api)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=souluanf_coupon-api&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=souluanf_coupon-api)
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=souluanf_coupon-api&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=souluanf_coupon-api)
-[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=souluanf_coupon-api&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=souluanf_coupon-api)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=souluanf_coupon-api&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=souluanf_coupon-api)
-[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=souluanf_coupon-api&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=souluanf_coupon-api)
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=souluanf_coupon-api&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=souluanf_coupon-api)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=souluanf_coupon-api&metric=bugs)](https://sonarcloud.io/summary/new_code?id=souluanf_coupon-api)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=souluanf_coupon-api&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=souluanf_coupon-api)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=souluanf_coupon-api&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=souluanf_coupon-api)
-
-
---
+---
 
 ## Como rodar
 
