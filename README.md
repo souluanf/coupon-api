@@ -2,6 +2,8 @@
 
 REST API para gerenciamento de cupons de desconto, com ciclo de vida completo: criação, publicação, resgate e exclusão lógica.
 
+**Produção:** `https://coupon-api.luanfernandes.dev` · [Swagger UI](https://coupon-api.luanfernandes.dev/swagger-ui/index.html)
+
 ---
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=souluanf_coupon-api&metric=alert_status&token=0b8cc8af8f76bcde0ca74ea643be90b74ca6187a)](https://sonarcloud.io/summary/new_code?id=souluanf_coupon-api)
@@ -49,7 +51,8 @@ cp .env.example .env
 docker compose up --build
 ```
 
-API: `http://localhost:8080` · Swagger: `http://localhost:8080/swagger-ui/index.html`
+API: `http://localhost:8080`
+Swagger: `http://localhost:8080/swagger-ui/index.html`
 
 ---
 
@@ -57,11 +60,11 @@ API: `http://localhost:8080` · Swagger: `http://localhost:8080/swagger-ui/index
 
 ### Contrato original
 
-| Método | Rota | Status | Descrição |
-|---|---|---|---|
-| `POST` | `/coupon` | 201 | Criar cupom |
-| `GET` | `/coupon/{id}` | 200 | Buscar por ID |
-| `DELETE` | `/coupon/{id}` | 204 | Soft delete |
+| Método   | Rota           | Status | Descrição     |
+|----------|----------------|--------|---------------|
+| `POST`   | `/coupon`      | 201    | Criar cupom   |
+| `GET`    | `/coupon/{id}` | 200    | Buscar por ID |
+| `DELETE` | `/coupon/{id}` | 204    | Soft delete   |
 
 ### Extensões além do escopo
 
@@ -112,13 +115,18 @@ curl -s -X DELETE http://localhost:8080/coupon/{id}
 ```bash
 # Todos (exclui deletados por padrão)
 curl -s http://localhost:8080/coupon
-
-# Apenas ativos
-curl -s "http://localhost:8080/coupon?status=ACTIVE"
-
-# Apenas deletados
-curl -s "http://localhost:8080/coupon?status=DELETED"
 ```
+
+```bash
+# Apenas ativos
+curl -s http://localhost:8080/coupon?status=ACTIVE
+```
+
+```bash
+# Apenas deletados
+curl -s http://localhost:8080/coupon?status=DELETED
+```
+
 
 A listagem suporta paginação (`page`, `size`) e ordenação (`sort`).
 
@@ -196,20 +204,20 @@ CouponResponse (DTO)
 ./mvnw test
 ```
 
-| Classe | Tipo | Cobertura |
-|---|---|---|
-| `CouponDomainTest` | Unitário | Domínio puro |
-| `CouponControllerTest` | Integração (H2) | Endpoints |
-| `ExceptionHandlerAdviceTest` | Unitário | Handlers de exceção |
-| `ArchitectureTest` | ArchUnit | Regras arquiteturais |
+| Classe                       | Tipo            | Cobertura            |
+|------------------------------|-----------------|----------------------|
+| `CouponDomainTest`           | Unitário        | Domínio puro         |
+| `CouponControllerTest`       | Integração (H2) | Endpoints            |
+| `ExceptionHandlerAdviceTest` | Unitário        | Handlers de exceção  |
+| `ArchitectureTest`           | ArchUnit        | Regras arquiteturais |
 
 ---
 
 ## Perfis
 
-| Perfil | Banco | Uso |
-|---|---|---|
-| `local` | H2 em memória | Desenvolvimento local |
-| `dev` | PostgreSQL | Ambiente de desenvolvimento |
-| `prd` | PostgreSQL | Produção |
-| `test` | H2 em memória | Testes automatizados |
+| Perfil  | Banco         | Uso                         |
+|---------|---------------|-----------------------------|
+| `local` | H2 em memória | Desenvolvimento local       |
+| `dev`   | PostgreSQL    | Ambiente de desenvolvimento |
+| `prd`   | PostgreSQL    | Produção                    |
+| `test`  | H2 em memória | Testes automatizados        |
