@@ -79,21 +79,23 @@ jobs:
 
       - name: Deploy to k3s
         uses: appleboy/ssh-action@0ff4204d59e8e51228ff73bce53f80d53301dee2 # v1
+        env:
+          IMAGE_TAG: ${{ github.sha }}
+          GHCR_PAT: ${{ secrets.GHCR_PAT }}
+          GHCR_USER: ${{ github.repository_owner }}
         with:
           host: ${{ secrets.DROPLET_HOST }}
           username: ${{ secrets.DROPLET_USER }}
           key: ${{ secrets.DROPLET_SSH_KEY }}
-          envs: GHCR_TOKEN,GHCR_USER
+          envs: IMAGE_TAG,GHCR_PAT,GHCR_USER
           script: |
             export KUBECONFIG=/etc/rancher/k3s/k3s.yaml
             kubectl apply -f /tmp/coupon-api/k8s/namespace.yaml
             kubectl create secret docker-registry ghcr-secret \
               --docker-server=ghcr.io \
               --docker-username=$GHCR_USER \
-              --docker-password=$GHCR_TOKEN \
+              --docker-password=$GHCR_PAT \
               -n coupon-api --dry-run=client -o yaml | kubectl apply -f -
             kubectl apply -f /tmp/coupon-api/k8s/
+            kubectl set image deployment/coupon-api coupon-api=ghcr.io/souluanf/coupon-api:$IMAGE_TAG -n coupon-api
             kubectl rollout status deployment/coupon-api -n coupon-api --timeout=180s
-        env:
-          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GHCR_USER: ${{ github.actor }}
