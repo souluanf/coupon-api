@@ -55,13 +55,20 @@ API: `http://localhost:8080` · Swagger: `http://localhost:8080/swagger-ui/index
 
 ## API Reference
 
-O payload de criação inclui o campo `published`, que define o estado inicial do cupom. Esse campo pressupõe que o estado de publicação pode mudar ao longo do tempo — o que torna `/publish` e `/redeem` extensões naturais do modelo. O endpoint de listagem foi incluído para facilitar a inspeção dos dados durante o desenvolvimento.
+### Contrato original
 
 | Método | Rota | Status | Descrição |
 |---|---|---|---|
 | `POST` | `/coupon` | 201 | Criar cupom |
 | `GET` | `/coupon/{id}` | 200 | Buscar por ID |
 | `DELETE` | `/coupon/{id}` | 204 | Soft delete |
+
+### Extensões além do escopo
+
+O payload de criação inclui o campo `published`, que define o estado inicial do cupom. Sem endpoints dedicados para mudar esse estado, o campo seria apenas um valor inicial sem ciclo de vida real. Os endpoints abaixo completam esse modelo de forma consciente, sem substituir o contrato original.
+
+| Método | Rota | Status | Descrição |
+|---|---|---|---|
 | `PATCH` | `/coupon/{id}/publish` | 200 | Publicar (INACTIVE → ACTIVE) |
 | `PATCH` | `/coupon/{id}/redeem` | 200 | Resgatar cupom |
 | `GET` | `/coupon` | 200 | Listar com filtro e paginação |
@@ -133,19 +140,19 @@ O campo `code` é alfanumérico com exatamente **6 caracteres**:
 
 ### Data de expiração
 
-- Não pode ser no passado — validado no momento da criação
+- Não pode ser no passado. A validação ocorre no momento da criação.
 
 ### Unicidade do código
 
 Um código não pode ser reutilizado por dois cupons ativos simultaneamente. A proteção é dupla:
 
-**1. Nível de aplicação** — verifica antes de salvar:
+**1. Nível de aplicação** verifica antes de salvar:
 
 ```java
 repository.existsByCodeAndStatusNot(code, CouponStatus.DELETED)
 ```
 
-**2. Nível de banco (PostgreSQL)** — índice único parcial via Flyway `V2`:
+**2. Nível de banco (PostgreSQL)** usa um índice único parcial via Flyway `V2`:
 
 ```sql
 CREATE UNIQUE INDEX uq_coupon_code_active ON coupon(code) WHERE status <> 'DELETED';
@@ -155,7 +162,7 @@ CREATE UNIQUE INDEX uq_coupon_code_active ON coupon(code) WHERE status <> 'DELET
 
 ### Reutilização após soft delete
 
-Cupons deletados liberam o código para reutilização. Tanto o check de aplicação quanto o índice parcial contemplam esse comportamento — a restrição ignora registros com `status = 'DELETED'`.
+Cupons deletados liberam o código para reutilização. Tanto o check de aplicação quanto o índice parcial contemplam esse comportamento, ignorando registros com `status = 'DELETED'`.
 
 ### Soft delete
 
@@ -172,9 +179,9 @@ O projeto separa explicitamente **objeto de domínio** de **entidade JPA**:
 ```
 CouponRequest (DTO)
     ↓
-CouponDomain (domínio puro — validações e sanitização)
+CouponDomain (domínio puro, validações e sanitização)
     ↓
-Coupon (entidade JPA — persistência)
+Coupon (entidade JPA, persistência)
     ↓
 CouponResponse (DTO)
 ```
